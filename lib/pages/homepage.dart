@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:qurankuy_2/pages/shalat/jadwalshalat.dart';
 
 import '../widgets/AlmatsuratTabbar.dart';
 import '../widgets/QuranTabbar.dart';
@@ -90,7 +91,13 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(height: 30),
                   buildButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PrayerTimes(),
+                          ));
+                    },
                     buttonText: 'Jadwal Shalat',
                   ),
                 ],

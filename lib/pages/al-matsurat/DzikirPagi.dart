@@ -1,86 +1,71 @@
-import 'package:arabic_font/arabic_font.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class DzikirPagi extends StatefulWidget {
+class DzikirPage extends StatefulWidget {
   @override
-  _DzikirPagiState createState() => _DzikirPagiState();
+  _DzikirPageState createState() => _DzikirPageState();
 }
 
-class _DzikirPagiState extends State<DzikirPagi> {
-  List<dynamic> dzikirList = [];
+class _DzikirPageState extends State<DzikirPage> {
+  List<DzikirData> dzikirList = [];
+
+  Future<void> fetchDzikir() async {
+    final response = await http
+        .get(Uri.parse('https://api.muslimapi.com/v1/DzikirPagiPetang'));
+
+    if (response.statusCode == 200) {
+      final dzikirData = jsonDecode(response.body)['data'];
+
+      setState(() {
+        dzikirList = dzikirData
+            .map<DzikirData>((json) => DzikirData.fromJson(json))
+            .toList();
+      });
+    } else {
+      throw Exception('Failed to load dzikir');
+    }
+  }
 
   @override
   void initState() {
     super.initState();
-    fetchData();
-  }
-
-  Future<void> fetchData() async {
-    final response = await http.get(Uri.parse(
-        'https://api-almatsurat-default-rtdb.firebaseio.com/AlmatsuratPagi.json'));
-
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      setState(() {
-        dzikirList = data as List<dynamic>;
-      });
-    } else {
-      // Handle API error
-      print('Error: ${response.statusCode}');
-    }
+    fetchDzikir();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: dzikirList.map((dzikir) {
-            return _createUIGetItem(
-              dzikir['judul'],
-              dzikir['ayat'],
-              dzikir['arti'],
-            );
-          }).toList(),
-        ),
+      body: ListView.builder(
+        itemCount: dzikirList.length,
+        itemBuilder: (BuildContext context, int index) {
+          final dzikir = dzikirList[index];
+          return ListTile(
+            title: Text(
+              dzikir.ayat,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            subtitle: Text(dzikir.arti),
+          );
+        },
       ),
     );
   }
+}
 
-  Widget _createUIGetItem(String judul, String arab, String arti) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          SizedBox(height: 16),
-          Text(
-            judul,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0,
-            ),
-          ),
-          SizedBox(height: 8),
-          Directionality(
-            textDirection: TextDirection.rtl,
-            child: Text(
-              arab,
-              style: ArabicTextStyle(
-                arabicFont: ArabicFont.dubai,
-                fontSize: 25,
-              ),
-            ),
-          ),
-          SizedBox(height: 8),
-          Text(
-            arti,
-            style: TextStyle(fontSize: 15.0),
-          ),
-        ],
-      ),
+class DzikirData {
+  final String ayat;
+  final String arti;
+
+  DzikirData({
+    required this.ayat,
+    required this.arti,
+  });
+
+  factory DzikirData.fromJson(Map<String, dynamic> json) {
+    return DzikirData(
+      ayat: json['latin'],
+      arti: json['translation'],
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../pages/al-matsurat/DzikirPagi.dart';
 import '../pages/al-matsurat/DzikirSore.dart';
 
@@ -16,7 +15,7 @@ class _AlmatsuratTabbarState extends State<AlmatsuratTabbar>
   late TabController _tabController;
 
   final List<Widget> _children = [
-    DzikirPagi(),
+    DzikirPage(),
     DzikirSore(),
   ];
 

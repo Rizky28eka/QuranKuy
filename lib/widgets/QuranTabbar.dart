@@ -15,7 +15,7 @@ class QuranTabbarState extends State<QuranTabbar>
   late TabController _tabController;
 
   final List<Widget> _children = [
-    SuratPage(),
+    DzikirPage(),
     JuzPage(),
     BookmarksPage(),
   ];
