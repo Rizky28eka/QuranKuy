@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../pages/al-quran/Bookmarks.dart';
-import '../pages/al-quran/juz.dart';
-import '../pages/al-quran/surat.dart';
+import '../pages/al-quran/Juz_List_Page.dart';
+import '../pages/al-quran/Surat_List_Page.dart';
 
 class QuranTabbar extends StatefulWidget {
   @override
@@ -15,8 +15,8 @@ class QuranTabbarState extends State<QuranTabbar>
   late TabController _tabController;
 
   final List<Widget> _children = [
-    DzikirPage(),
-    JuzPage(),
+    SuratListPage(),
+    JuzListPage(),
     BookmarksPage(),
   ];
 

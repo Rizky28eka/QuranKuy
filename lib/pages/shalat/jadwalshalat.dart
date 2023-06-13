@@ -35,9 +35,6 @@ class _PrayerTimesState extends State<PrayerTimes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Jadwal Shalat'),
-      ),
       body: ListView.builder(
         itemCount: prayerTimes.length,
         itemBuilder: (context, index) {
@@ -50,6 +47,19 @@ class _PrayerTimesState extends State<PrayerTimes> {
           );
         },
       ),
+    );
+  }
+}
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: PrayerTimes(),
     );
   }
 }
