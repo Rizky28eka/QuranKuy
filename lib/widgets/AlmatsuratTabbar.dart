@@ -15,8 +15,8 @@ class _AlmatsuratTabbarState extends State<AlmatsuratTabbar>
   late TabController _tabController;
 
   final List<Widget> _children = [
-    DzikirPage(),
-    DzikirSore(),
+    DzikirPagiPage(),
+    DzikirSorePage(),
   ];
 
   @override
