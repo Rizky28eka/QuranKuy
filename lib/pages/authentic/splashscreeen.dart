@@ -53,7 +53,6 @@ class _SplashScreenState extends State<SplashScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Gambar
               Container(
                 width: 250,
                 height: 250,
@@ -65,7 +64,6 @@ class _SplashScreenState extends State<SplashScreen>
                 ),
               ),
               SizedBox(height: 20),
-              // Teks
               Text(
                 'QuranKuy',
                 style: GoogleFonts.crimsonText(

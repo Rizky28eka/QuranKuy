@@ -9,7 +9,7 @@ class JuzListPage extends StatefulWidget {
 }
 
 class _JuzListPageState extends State<JuzListPage> {
-  late List<dynamic> juzs;
+  List<dynamic>? juzs;
 
   @override
   void initState() {
@@ -23,25 +23,38 @@ class _JuzListPageState extends State<JuzListPage> {
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      setState(() {
-        juzs = data['juzs'];
-      });
+      if (data != null && data['juzs'] != null) {
+        setState(() {
+          juzs = data['juzs'];
+        });
+      }
     } else {
-      // Error handling
-      print('Failed to fetch juzs');
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Error'),
+          content: Text('Failed to fetch juzs.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('OK'),
+            ),
+          ],
+        ),
+      );
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ignore: unnecessary_null_comparison
       body: juzs == null
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(
-              itemCount: juzs.length,
+              key: UniqueKey(),
+              itemCount: juzs!.length,
               itemBuilder: (context, index) {
-                final juz = juzs[index];
+                final juz = juzs![index];
                 final juzNumber = juz['juz_number'];
 
                 return ListTile(

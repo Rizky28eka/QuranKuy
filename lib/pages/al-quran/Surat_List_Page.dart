@@ -9,7 +9,7 @@ class SuratListPage extends StatefulWidget {
 }
 
 class _SuratListPageState extends State<SuratListPage> {
-  late List<dynamic> chapters;
+  List<dynamic>? chapters;
 
   @override
   void initState() {
@@ -23,25 +23,38 @@ class _SuratListPageState extends State<SuratListPage> {
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      setState(() {
-        chapters = data['chapters'];
-      });
+      if (data != null && data['chapters'] != null) {
+        setState(() {
+          chapters = data['chapters'];
+        });
+      }
     } else {
-      // Error handling
-      print('Failed to fetch chapters');
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Error'),
+          content: Text('Failed to fetch chapters.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('OK'),
+            ),
+          ],
+        ),
+      );
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ignore: unnecessary_null_comparison
       body: chapters == null
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(
-              itemCount: chapters.length,
+              key: UniqueKey(),
+              itemCount: chapters!.length,
               itemBuilder: (context, index) {
-                final chapter = chapters[index];
+                final chapter = chapters![index];
                 final name = chapter['name_simple'];
                 final meaning = chapter['translated_name']['name'];
                 final verses = chapter['verses_count'];

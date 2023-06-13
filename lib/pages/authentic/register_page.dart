@@ -195,7 +195,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               SizedBox(height: 20),
               Container(
-                width: 295,
+                width: 225,
                 height: 45,
                 child: TextButton(
                   style: TextButton.styleFrom(
@@ -275,9 +275,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    onTap: () {
-                      // Action when Google icon is clicked
-                    },
+                    onTap: () {},
                     child: Container(
                       width: 30,
                       height: 30,
@@ -304,9 +302,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   SizedBox(width: 10),
                   GestureDetector(
-                    onTap: () {
-                      // Action when Facebook icon is clicked
-                    },
+                    onTap: () {},
                     child: Container(
                       width: 30,
                       height: 30,

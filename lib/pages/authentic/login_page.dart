@@ -115,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 20),
               Container(
-                width: 295,
+                width: 225,
                 height: 45,
                 child: TextButton(
                   style: TextButton.styleFrom(

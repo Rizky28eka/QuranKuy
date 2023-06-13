@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:qurankuy_2/pages/doa/Doa_pilihan.dart';
 import 'package:qurankuy_2/pages/shalat/jadwalshalat.dart';
 
 import '../widgets/AlmatsuratTabbar.dart';
@@ -74,7 +75,14 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(height: 30),
                   buildButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DoaPilihan(),
+                        ),
+                      );
+                    },
                     buttonText: 'Doa Pilihan',
                   ),
                   SizedBox(height: 30),
@@ -95,7 +103,7 @@ class HomePage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PrayerTimes(),
+                            builder: (context) => JadwalShalatPage(),
                           ));
                     },
                     buttonText: 'Jadwal Shalat',

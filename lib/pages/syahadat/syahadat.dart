@@ -9,7 +9,7 @@ class SyahadatPage extends StatelessWidget {
         backgroundColor: Color(0xFFFFFFFF),
         elevation: 0,
         leading: IconButton(
-          icon: Image.asset('assets/IcBack.png'),
+          icon: Image.asset('assets/icons/IcBack.png'),
           onPressed: () {
             Navigator.pop(context);
           },
