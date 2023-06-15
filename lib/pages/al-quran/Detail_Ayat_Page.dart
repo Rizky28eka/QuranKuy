@@ -5,24 +5,26 @@ class DetailAyatPage extends StatelessWidget {
   final String meaning;
   final int verses;
 
-  DetailAyatPage({
+  const DetailAyatPage({
+    Key? key,
     required this.name,
     required this.meaning,
     required this.verses,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Nama Surat: $name'),
-            Text('Arti Surat: $meaning'),
-            Text('Jumlah Ayat: $verses'),
-          ],
-        ),
+      appBar: AppBar(
+        title: Text('Detail Ayat'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Name: $name'),
+          Text('Meaning: $meaning'),
+          Text('Verses: $verses'),
+        ],
       ),
     );
   }

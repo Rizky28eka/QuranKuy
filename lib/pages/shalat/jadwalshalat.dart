@@ -10,6 +10,6 @@ class JadwalShalatPage extends StatefulWidget {
 class _JadwalShalatPageState extends State<JadwalShalatPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }

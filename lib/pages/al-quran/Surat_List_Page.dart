@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'Bookmarks.dart';
 import 'Detail_Ayat_Page.dart';
 
 class SuratListPage extends StatefulWidget {
@@ -10,6 +11,7 @@ class SuratListPage extends StatefulWidget {
 
 class _SuratListPageState extends State<SuratListPage> {
   List<dynamic>? chapters;
+  List<dynamic> bookmarks = [];
 
   @override
   void initState() {
@@ -45,6 +47,22 @@ class _SuratListPageState extends State<SuratListPage> {
     }
   }
 
+  void toggleBookmark(dynamic chapter) {
+    if (bookmarks.contains(chapter)) {
+      setState(() {
+        bookmarks.remove(chapter);
+      });
+    } else {
+      setState(() {
+        bookmarks.add(chapter);
+      });
+    }
+  }
+
+  bool isBookmarked(dynamic chapter) {
+    return bookmarks.contains(chapter);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,8 +79,27 @@ class _SuratListPageState extends State<SuratListPage> {
 
                 return ListTile(
                   title: Text(name),
-                  subtitle: Text('$meaning - Jumlah Ayat: $verses'),
-                  trailing: Icon(Icons.bookmark),
+                  subtitle: Text('$meaning - Ayat: $verses'),
+                  trailing: IconButton(
+                    icon: Icon(
+                      isBookmarked(chapter)
+                          ? Icons.bookmark
+                          : Icons.bookmark_border,
+                    ),
+                    onPressed: () {
+                      toggleBookmark(chapter);
+                      if (isBookmarked(chapter)) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BookmarkPage(
+                              bookmarks: [chapter],
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                  ),
                   onTap: () {
                     Navigator.push(
                       context,

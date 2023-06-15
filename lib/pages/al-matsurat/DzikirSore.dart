@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class DzikirSore extends StatelessWidget {
-  const DzikirSore({super.key});
+class DzikirSorePage extends StatefulWidget {
+  const DzikirSorePage({super.key});
 
   @override
+  State<DzikirSorePage> createState() => _DzikirSorePageState();
+}
+
+class _DzikirSorePageState extends State<DzikirSorePage> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text("Dzikir Sore"),
-      ),
-    );
+    return Container();
   }
 }

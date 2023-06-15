@@ -55,7 +55,9 @@ class HomePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => QuranTabbar(),
+                          builder: (context) => QuranTabbar(
+                            bookmarks: [],
+                          ),
                         ),
                       );
                     },

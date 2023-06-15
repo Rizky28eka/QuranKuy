@@ -6,6 +6,10 @@ import '../pages/al-quran/Juz_List_Page.dart';
 import '../pages/al-quran/Surat_List_Page.dart';
 
 class QuranTabbar extends StatefulWidget {
+  final List<dynamic> bookmarks;
+
+  QuranTabbar({required this.bookmarks});
+
   @override
   State<QuranTabbar> createState() => QuranTabbarState();
 }
@@ -17,7 +21,9 @@ class QuranTabbarState extends State<QuranTabbar>
   final List<Widget> _children = [
     SuratListPage(),
     JuzListPage(),
-    BookmarksPage(),
+    BookmarkPage(
+      bookmarks: [],
+    ),
   ];
 
   @override
@@ -81,7 +87,11 @@ class QuranTabbarState extends State<QuranTabbar>
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: _children,
+              children: [
+                SuratListPage(),
+                JuzListPage(),
+                // BookmarksPage(bookmarks: widget.bookmarks),
+              ],
             ),
           ),
         ],
