@@ -3,9 +3,9 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qurankuy_2/pages/doa/Doa_pilihan.dart';
 import 'package:qurankuy_2/pages/shalat/jadwalshalat.dart';
+import 'package:qurankuy_2/widgets/CustBtn.dart';
 import '../widgets/AlmatsuratTabbar.dart';
 import '../widgets/QuranTabbar.dart';
-import '../widgets/style.dart';
 import 'syahadat/syahadat.dart';
 
 class HomePage extends StatelessWidget {
@@ -49,22 +49,27 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 30),
-                  
-                  buildButton(
+                  CustomButton(
+                    text: "Al-Quran",
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => QuranTabbar(
-                            bookmarks: [],
-                          ),
+                          builder: (context) => QuranTabbar(bookmarks: []),
                         ),
                       );
                     },
-                    buttonText: 'Al-Quran',
+                    width: 310.0,
+                    height: 30.0,
+                    textStyle: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(height: 30),
-                  buildButton(
+                  CustomButton(
+                    text: "Al-Matsurat",
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -73,10 +78,17 @@ class HomePage extends StatelessWidget {
                         ),
                       );
                     },
-                    buttonText: 'Al-Matsurat',
+                    width: 310.0,
+                    height: 30.0,
+                    textStyle: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(height: 30),
-                  buildButton(
+                  CustomButton(
+                    text: "Doa Pilihan",
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -85,10 +97,17 @@ class HomePage extends StatelessWidget {
                         ),
                       );
                     },
-                    buttonText: 'Doa Pilihan',
+                    width: 310.0,
+                    height: 30.0,
+                    textStyle: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(height: 30),
-                  buildButton(
+                  CustomButton(
+                    text: "Syahadat",
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -97,63 +116,37 @@ class HomePage extends StatelessWidget {
                         ),
                       );
                     },
-                    buttonText: 'Syahadat',
+                    width: 310.0,
+                    height: 30.0,
+                    textStyle: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(height: 30),
-                  buildButton(
+                  CustomButton(
+                    text: "Jadwal Shalat",
                     onPressed: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => JadwalShalatPage(),
-                          ));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => JadwalShalatPage(),
+                        ),
+                      );
                     },
-                    buttonText: 'Jadwal Shalat',
+                    width: 310.0,
+                    height: 30.0,
+                    textStyle: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget buildButton(
-      {required VoidCallback onPressed, required String buttonText}) {
-    return Container(
-      width: 320,
-      height: 50,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.3),
-            blurRadius: 5,
-            offset: Offset(0, 3),
-          ),
-        ],
-      ),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          primary: AppColors.primaryColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              buttonText,
-              style: GoogleFonts.crimsonText(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ],
         ),
       ),
     );

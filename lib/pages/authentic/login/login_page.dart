@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qurankuy_2/pages/homepage.dart';
-import '../../../widgets/style.dart';
+import '../../../widgets/AppStyle.dart';
 import '../../../widgets/CustBtn.dart';
 import '../register_page.dart';
 import 'widgets/EmailLoginTextField.dart';

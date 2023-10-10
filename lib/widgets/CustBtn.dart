@@ -1,27 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:qurankuy_2/widgets/AppStyle.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
+  final TextStyle? textStyle;
+  final double width;
+  final double height;
+  final Color? buttonColor;
 
-  CustomButton({required this.text, required this.onPressed});
+  CustomButton({
+    required this.text,
+    required this.onPressed,
+    this.textStyle,
+    this.width = 200.0,
+    this.height = 48.0,
+    this.buttonColor,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        primary: Colors.blue,
+        primary: buttonColor ?? AppColors.primaryColor,
         onPrimary: Colors.white,
         padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
-        minimumSize: Size(200.0, 0), 
+        minimumSize: Size(width, height),
       ),
       child: Text(
         text,
-        style: TextStyle(fontSize: 16.0),
+        style: textStyle ??
+            GoogleFonts.nunitoSans(
+              textStyle: TextStyle(fontSize: 16.0),
+            ),
       ),
     );
   }
