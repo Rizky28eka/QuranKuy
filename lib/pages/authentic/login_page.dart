@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qurankuy_2/pages/homepage.dart';
 import 'package:qurankuy_2/widgets/button/Btn_Txt.dart';
+import 'package:qurankuy_2/widgets/icon_rounded.dart';
 import '../../widgets/AppStyle.dart';
 import '../../widgets/button/Cust_Btn.dart';
 import '../../widgets/textfield/EmailTextField.dart';
@@ -59,14 +60,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 20),
               EmailTextField(
-                controller: TextEditingController(),
-                hintText: 'Email',
-              ),
+                  controller: TextEditingController(), hintText: 'Email'),
               SizedBox(height: 20),
               PasswordTextField(
-                controller: TextEditingController(),
-                hintText: 'Password',
-              ),
+                  controller: TextEditingController(), hintText: 'Password'),
               SizedBox(height: 20),
               CustomButton(
                 text: 'Login',
@@ -149,23 +146,10 @@ class _LoginPageState extends State<LoginPage> {
                       width: 30,
                       height: 30,
                       margin: EdgeInsets.symmetric(horizontal: 5),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 2,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: Image.asset(
-                        'assets/icons/IcGoogle.png',
+                      child: IconRounded(
+                        imagePath: 'assets/icons/IcGoogle.png',
+                        iconSize: 30.0,
+                        backgroundColor: Colors.transparent,
                       ),
                     ),
                   ),
@@ -176,28 +160,15 @@ class _LoginPageState extends State<LoginPage> {
                       width: 30,
                       height: 30,
                       margin: EdgeInsets.symmetric(horizontal: 5),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 2,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: Image.asset(
-                        'assets/icons/IcFacebook.png',
+                      child: IconRounded(
+                        imagePath: 'assets/icons/IcFacebook.png',
+                        iconSize: 30.0,
+                        backgroundColor: Colors.transparent,
                       ),
                     ),
                   ),
                 ],
-              ),
+              )
             ],
           ),
         ),

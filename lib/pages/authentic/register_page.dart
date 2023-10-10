@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qurankuy_2/pages/homepage.dart';
+import 'package:qurankuy_2/widgets/icon_rounded.dart';
 import 'package:qurankuy_2/widgets/textfield/CustTextField.dart';
 import 'package:qurankuy_2/widgets/textfield/EmailTextField.dart';
 import 'package:qurankuy_2/widgets/textfield/PasswordTextField.dart';
@@ -160,23 +161,10 @@ class _RegisterPageState extends State<RegisterPage> {
                       width: 30,
                       height: 30,
                       margin: EdgeInsets.symmetric(horizontal: 5),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 2,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: Image.asset(
-                        'assets/icons/IcGoogle.png',
+                      child: IconRounded(
+                        imagePath: 'assets/icons/IcGoogle.png',
+                        iconSize: 30.0,
+                        backgroundColor: Colors.transparent,
                       ),
                     ),
                   ),
@@ -187,28 +175,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       width: 30,
                       height: 30,
                       margin: EdgeInsets.symmetric(horizontal: 5),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 2,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: Image.asset(
-                        'assets/icons/IcFacebook.png',
+                      child: IconRounded(
+                        imagePath: 'assets/icons/IcFacebook.png',
+                        iconSize: 30.0,
+                        backgroundColor: Colors.transparent,
                       ),
                     ),
                   ),
                 ],
-              ),
+              )
             ],
           ),
         ),
