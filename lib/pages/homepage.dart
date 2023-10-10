@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qurankuy_2/pages/doa/Doa_pilihan.dart';
 import 'package:qurankuy_2/pages/shalat/jadwalshalat.dart';
-import 'package:qurankuy_2/widgets/CustBtn.dart';
+import 'package:qurankuy_2/widgets/button/Cust_Btn.dart';
 import '../widgets/AlmatsuratTabbar.dart';
 import '../widgets/QuranTabbar.dart';
 import 'syahadat/syahadat.dart';

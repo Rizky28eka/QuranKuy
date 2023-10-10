@@ -5,7 +5,8 @@ import 'package:qurankuy_2/widgets/textfield/CustTextField.dart';
 import 'package:qurankuy_2/widgets/textfield/EmailTextField.dart';
 import 'package:qurankuy_2/widgets/textfield/PasswordTextField.dart';
 import '../../widgets/AppStyle.dart';
-import '../../widgets/CustBtn.dart';
+import '../../widgets/button/Btn_Txt.dart';
+import '../../widgets/button/Cust_Btn.dart';
 import 'login_page.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -94,7 +95,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   );
                 },
               ),
-              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -105,21 +105,21 @@ class _RegisterPageState extends State<RegisterPage> {
                       fontSize: 12,
                     ),
                   ),
-                  SizedBox(width: 5),
-                  GestureDetector(
-                    onTap: navigateToLoginPage,
-                    child: Text(
-                      "Login",
-                      style: GoogleFonts.montserrat(
-                        color: AppColors.ButtonColor,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
+                  CustomTextButton(
+                    text: "LOGIN",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ),
+                      );
+                    },
+                    textStyle:
+                        TextStyle(fontSize: 12.0, color: AppColors.ButtonColor),
+                  )
                 ],
               ),
-              SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 80),
                 child: Row(

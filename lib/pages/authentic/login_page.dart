@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qurankuy_2/pages/homepage.dart';
+import 'package:qurankuy_2/widgets/button/Btn_Txt.dart';
 import '../../widgets/AppStyle.dart';
-import '../../widgets/CustBtn.dart';
+import '../../widgets/button/Cust_Btn.dart';
 import '../../widgets/textfield/EmailTextField.dart';
 import '../../widgets/textfield/PasswordTextField.dart';
 import 'register_page.dart';
@@ -81,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                   );
                 },
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -92,18 +93,19 @@ class _LoginPageState extends State<LoginPage> {
                       fontSize: 12,
                     ),
                   ),
-                  SizedBox(width: 5),
-                  GestureDetector(
-                    onTap: navigateToRegisterPage,
-                    child: Text(
-                      "Register",
-                      style: GoogleFonts.montserrat(
-                        color: AppColors.ButtonColor,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
+                  CustomTextButton(
+                    text: "Register",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterPage(),
+                        ),
+                      );
+                    },
+                    textStyle:
+                        TextStyle(fontSize: 12.0, color: AppColors.ButtonColor),
+                  )
                 ],
               ),
               SizedBox(height: 10),
