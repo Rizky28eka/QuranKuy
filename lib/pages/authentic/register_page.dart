@@ -1,8 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:qurankuy_2/pages/homepage.dart';
+import 'package:qurankuy_2/widgets/textfield/CustTextField.dart';
+import 'package:qurankuy_2/widgets/textfield/EmailTextField.dart';
+import 'package:qurankuy_2/widgets/textfield/PasswordTextField.dart';
 import '../../widgets/AppStyle.dart';
-import 'login/login_page.dart';
+import '../../widgets/CustBtn.dart';
+import 'login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   static const String routeName = '/register';
@@ -63,156 +67,32 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               SizedBox(height: 20),
-              Container(
-                width: 310,
-                height: 40,
-                child: TextFormField(
-                  cursorColor: Colors.white,
-                  style:
-                      GoogleFonts.montserrat(color: AppColors.FontColorWhite),
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    fillColor: AppColors.FontColorBlue,
-                    filled: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: "Nama",
-                    hintStyle: GoogleFonts.montserrat(
-                      color: AppColors.FontColorWhite,
-                    ),
-                  ),
-                ),
-              ),
+              CustTextField(
+                  controller: TextEditingController(), hintText: 'Username'),
               SizedBox(height: 20),
-              Container(
-                width: 310,
-                height: 40,
-                child: TextFormField(
-                  cursorColor: Colors.white,
-                  style:
-                      GoogleFonts.montserrat(color: AppColors.FontColorWhite),
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    fillColor: AppColors.FontColorBlue,
-                    filled: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: "Email",
-                    hintStyle: GoogleFonts.montserrat(
-                      color: AppColors.FontColorWhite,
-                    ),
-                  ),
-                ),
-              ),
+              EmailTextField(
+                  controller: TextEditingController(), hintText: 'Email'),
               SizedBox(height: 20),
-              Container(
-                width: 310,
-                height: 40,
-                child: TextFormField(
-                  controller: passwordController,
-                  cursorColor: Colors.white,
-                  obscureText: hidePassword,
-                  style:
-                      GoogleFonts.montserrat(color: AppColors.FontColorWhite),
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    fillColor: AppColors.FontColorBlue,
-                    filled: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: "Password",
-                    hintStyle: GoogleFonts.montserrat(
-                      color: AppColors.FontColorWhite,
-                    ),
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          hidePassword = !hidePassword;
-                        });
-                      },
-                      child: Icon(
-                        hidePassword ? Icons.visibility : Icons.visibility_off,
-                        color: AppColors.FontColorWhite,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              PasswordTextField(
+                  controller: TextEditingController(), hintText: "Password"),
               SizedBox(height: 20),
-              Container(
-                width: 310,
-                height: 40,
-                child: TextFormField(
-                  controller: confirmPasswordController,
-                  cursorColor: Colors.white,
-                  obscureText: hideConfirmPassword,
-                  style:
-                      GoogleFonts.montserrat(color: AppColors.FontColorWhite),
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    fillColor: AppColors.FontColorBlue,
-                    filled: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: "Re-Type Password",
-                    hintStyle: GoogleFonts.montserrat(
-                      color: AppColors.FontColorWhite,
-                    ),
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          hideConfirmPassword = !hideConfirmPassword;
-                        });
-                      },
-                      child: Icon(
-                        hideConfirmPassword
-                            ? Icons.visibility
-                            : Icons.visibility_off,
-                        color: AppColors.FontColorWhite,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 10),
-              Visibility(
-                visible: !isPasswordMatch(),
-                child: Text(
-                  "Passwords do not match",
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontSize: 12,
-                  ),
-                ),
-              ),
+              PasswordTextField(
+                  controller: TextEditingController(),
+                  hintText: "Re-Type Password"),
               SizedBox(height: 20),
-              Container(
-                width: 225,
-                height: 45,
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: AppColors.ButtonColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+              CustomButton(
+                text: 'Login',
+                buttonColor: AppColors.ButtonColor,
+                width: 250,
+                height: 15,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
                     ),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "Register",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
+                  );
+                },
               ),
               SizedBox(height: 20),
               Row(

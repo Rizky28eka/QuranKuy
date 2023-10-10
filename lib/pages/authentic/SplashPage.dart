@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../widgets/AppStyle.dart';
-import 'login/login_page.dart';
+import 'login_page.dart';
 
 class SplashPage extends StatefulWidget {
   static const String routeName = '/splash';

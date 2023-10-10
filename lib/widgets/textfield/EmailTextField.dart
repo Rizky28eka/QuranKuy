@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
-class PasswordLoginTextField extends StatelessWidget {
+class EmailTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
 
-  PasswordLoginTextField({required this.controller, required this.hintText});
+  EmailTextField({required this.controller, required this.hintText});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
-      obscureText: true, // Mengubah teks menjadi tersembunyi (kata sandi)
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
         hintText: hintText,
@@ -24,10 +23,11 @@ class PasswordLoginTextField extends StatelessWidget {
         ),
         hintStyle: TextStyle(color: Colors.white),
         prefixIcon: Icon(
-          Icons.lock,
+          Icons.email,
           color: Colors.white,
-        ), // Ikon kunci di sebelah kiri input
+        ),
       ),
+      keyboardType: TextInputType.emailAddress,
     );
   }
 }

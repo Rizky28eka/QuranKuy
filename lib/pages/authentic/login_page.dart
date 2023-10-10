@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qurankuy_2/pages/homepage.dart';
-import '../../../widgets/AppStyle.dart';
-import '../../../widgets/CustBtn.dart';
-import '../register_page.dart';
-import 'widgets/EmailLoginTextField.dart';
-import 'widgets/PasswordLoginTextField.dart';
+import '../../widgets/AppStyle.dart';
+import '../../widgets/CustBtn.dart';
+import '../../widgets/textfield/EmailTextField.dart';
+import '../../widgets/textfield/PasswordTextField.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
   static const String routeName = '/login';
@@ -15,7 +15,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool hidePassword = true;
   TextEditingController passwordController = TextEditingController();
 
   @override
@@ -50,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 10),
               Text(
-                "Welcome Back",
+                "Assalamualaikum",
                 style: GoogleFonts.montserrat(
                   color: AppColors.FontColorWhite,
                   fontWeight: FontWeight.bold,
@@ -58,18 +57,21 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(height: 20),
-              EmailLoginTextField(
+              EmailTextField(
                 controller: TextEditingController(),
                 hintText: 'Email',
               ),
               SizedBox(height: 20),
-              PasswordLoginTextField(
+              PasswordTextField(
                 controller: TextEditingController(),
                 hintText: 'Password',
               ),
               SizedBox(height: 20),
               CustomButton(
                 text: 'Login',
+                buttonColor: AppColors.ButtonColor,
+                width: 250,
+                height: 15,
                 onPressed: () {
                   Navigator.push(
                     context,
