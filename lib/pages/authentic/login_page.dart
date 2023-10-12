@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                   );
                 },
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 5),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -88,6 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: GoogleFonts.montserrat(
                       color: AppColors.FontColorWhite,
                       fontSize: 12,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   CustomTextButton(
@@ -105,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                   )
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 5),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 80),
                 child: Row(
@@ -128,10 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     Expanded(
-                      child: Divider(
-                        color: Colors.white,
-                        thickness: 1,
-                      ),
+                      child: Divider(color: Colors.white, thickness: 1),
                     ),
                   ],
                 ),

@@ -104,6 +104,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: GoogleFonts.montserrat(
                       color: AppColors.FontColorWhite,
                       fontSize: 12,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   CustomTextButton(
