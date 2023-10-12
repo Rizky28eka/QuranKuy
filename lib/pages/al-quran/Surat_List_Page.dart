@@ -89,14 +89,14 @@ class _SuratListPageState extends State<SuratListPage> {
                     onPressed: () {
                       toggleBookmark(chapter);
                       if (isBookmarked(chapter)) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => BookmarkPage(
-                              bookmarks: [chapter],
-                            ),
-                          ),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => BookmarksPage(
+                        //      bookmarks ,
+                        //     ),
+                        //   ),
+                        // );
                       }
                     },
                   ),

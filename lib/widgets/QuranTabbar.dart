@@ -21,9 +21,9 @@ class QuranTabbarState extends State<QuranTabbar>
   final List<Widget> _children = [
     SuratListPage(),
     JuzListPage(),
-    BookmarkPage(
-      bookmarks: [],
-    ),
+    // BookmarkPage(
+    //   bookmarks: [],
+    // ),
   ];
 
   @override
