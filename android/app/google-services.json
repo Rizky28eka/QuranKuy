@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1049749893034",
+    "project_id": "qurankuy",
+    "storage_bucket": "qurankuy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049749893034:android:19b07a992e1d6d158045d3",
+        "android_client_info": {
+          "package_name": "com.example.qurankuy_2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWMmnUmTZNuQiRJItaG5p-Lg_ELzpvqlg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

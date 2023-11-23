@@ -1,6 +1,17 @@
 # This is a generated file; do not edit or check into version control.
-path_provider=/Users/rizky28eka/.pub-cache/hosted/pub.dev/path_provider-2.0.15/
-path_provider_android=/Users/rizky28eka/.pub-cache/hosted/pub.dev/path_provider_android-2.0.27/
-path_provider_foundation=/Users/rizky28eka/.pub-cache/hosted/pub.dev/path_provider_foundation-2.2.3/
-path_provider_linux=/Users/rizky28eka/.pub-cache/hosted/pub.dev/path_provider_linux-2.1.11/
-path_provider_windows=/Users/rizky28eka/.pub-cache/hosted/pub.dev/path_provider_windows-2.1.7/
+firebase_core=/Users/rizky28eka/.pub-cache/hosted/pub.dev/firebase_core-2.23.0/
+firebase_core_web=/Users/rizky28eka/.pub-cache/hosted/pub.dev/firebase_core_web-2.8.1/
+firebase_storage=/Users/rizky28eka/.pub-cache/hosted/pub.dev/firebase_storage-11.5.2/
+firebase_storage_web=/Users/rizky28eka/.pub-cache/hosted/pub.dev/firebase_storage_web-3.6.14/
+flutter_localization=/Users/rizky28eka/.pub-cache/hosted/pub.dev/flutter_localization-0.1.14/
+path_provider=/Users/rizky28eka/.pub-cache/hosted/pub.dev/path_provider-2.1.1/
+path_provider_android=/Users/rizky28eka/.pub-cache/hosted/pub.dev/path_provider_android-2.2.1/
+path_provider_foundation=/Users/rizky28eka/.pub-cache/hosted/pub.dev/path_provider_foundation-2.3.1/
+path_provider_linux=/Users/rizky28eka/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
+path_provider_windows=/Users/rizky28eka/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1/
+shared_preferences=/Users/rizky28eka/.pub-cache/hosted/pub.dev/shared_preferences-2.2.2/
+shared_preferences_android=/Users/rizky28eka/.pub-cache/hosted/pub.dev/shared_preferences_android-2.2.1/
+shared_preferences_foundation=/Users/rizky28eka/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.3.4/
+shared_preferences_linux=/Users/rizky28eka/.pub-cache/hosted/pub.dev/shared_preferences_linux-2.3.2/
+shared_preferences_web=/Users/rizky28eka/.pub-cache/hosted/pub.dev/shared_preferences_web-2.2.2/
+shared_preferences_windows=/Users/rizky28eka/.pub-cache/hosted/pub.dev/shared_preferences_windows-2.3.2/
