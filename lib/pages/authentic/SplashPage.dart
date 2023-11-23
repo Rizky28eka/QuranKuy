@@ -47,34 +47,43 @@ class _SplashPageState extends State<SplashPage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
-      body: FadeTransition(
-        opacity: _fadeAnimation,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 250,
-                height: 250,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/icons/IcApp.png'),
-                    fit: BoxFit.contain,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FadeTransition(
+              opacity: _fadeAnimation,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 250,
+                    height: 250,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/icons/IcApp.png'),
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(height: 20),
+                  Text(
+                    'QuranKuy',
+                    style: GoogleFonts.crimsonText(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(height: 20),
-              Text(
-                'QuranKuy',
-                style: GoogleFonts.crimsonText(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
+            ),
+            SizedBox(height: 20), // Adjust the spacing as needed
+            CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            ),
+          ],
         ),
       ),
     );

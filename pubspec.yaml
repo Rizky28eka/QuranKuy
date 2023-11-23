@@ -41,6 +41,7 @@ dependencies:
   flutter_localization: ^0.1.14
   firebase_core: ^2.23.0
   firebase_storage: ^11.5.2
+  firebase_auth: ^4.14.1
   
 
 dev_dependencies:

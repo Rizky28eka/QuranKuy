@@ -9,6 +9,7 @@ class CustomButton extends StatelessWidget {
   final double width;
   final double height;
   final Color? buttonColor;
+  final FontWeight? fontWeight;
 
   CustomButton({
     required this.text,
@@ -17,6 +18,7 @@ class CustomButton extends StatelessWidget {
     this.width = 200.0,
     this.height = 48.0,
     this.buttonColor,
+    this.fontWeight = FontWeight.bold,
   });
 
   @override
@@ -24,8 +26,8 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        primary: buttonColor ?? AppColors.primaryColor,
-        onPrimary: Colors.white,
+        foregroundColor: Colors.white,
+        backgroundColor: buttonColor ?? AppColors.primaryColor,
         padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -35,8 +37,11 @@ class CustomButton extends StatelessWidget {
       child: Text(
         text,
         style: textStyle ??
-            GoogleFonts.nunitoSans(
-              textStyle: TextStyle(fontSize: 16.0),
+            GoogleFonts.montserrat(
+              textStyle: TextStyle(
+                fontSize: 16.0,
+                fontWeight: fontWeight,
+              ),
             ),
       ),
     );

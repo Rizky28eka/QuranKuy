@@ -6,13 +6,13 @@ class CustomTextButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final TextStyle? textStyle;
-  final double fontSize; // Tambahkan properti ukuran font
+  final double fontSize;
 
   CustomTextButton({
     required this.text,
     required this.onPressed,
     this.textStyle,
-    this.fontSize = 16.0, // Atur ukuran font default di sini
+    this.fontSize = 16.0,
   });
 
   @override
@@ -20,15 +20,14 @@ class CustomTextButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        primary: AppColors.primaryColor, // Warna teks
+        primary: AppColors.primaryColor,
         padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
       ),
       child: Text(
         text,
         style: textStyle ??
-            GoogleFonts.nunitoSans(
-              textStyle: TextStyle(
-                  fontSize: fontSize), // Gunakan ukuran font yang disesuaikan
+            GoogleFonts.montserrat(
+              textStyle: TextStyle(fontSize: fontSize),
             ),
       ),
     );
